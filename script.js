@@ -6,6 +6,8 @@ const botaoCalcular = document.querySelector('.calcular');
 const ponto = document.querySelector('.ponto');
 
 
+const operadores = ['+', '-', '*', '/'];
+
 botoesNum.forEach(function (botao) {
   botao.addEventListener('click', function () {
     display.value += botao.textContent; // adiciona ao final do display o texto que aparece no botão
@@ -17,7 +19,7 @@ botoesOp.forEach(function (botao) {
     //guarda o ultimo caractere do display (length - 1, pois a contagem começa em 0):
     const ultimo = display.value[display.value.length - 1];
     // se o display esta vazio OU ja terminar com operadores encerra sem fazer nada:  
-    if (display.value.length === 0 || ultimo === '-' || ultimo === '+' || ultimo === '/' || ultimo === '*') {
+    if (display.value.length === 0 || operadores.includes(ultimo)) {
       return;
     }
     //so chega aqui apos passar nas verificaçoes
@@ -36,7 +38,7 @@ botaoLimpar.addEventListener('click', function () {
 ponto.addEventListener('click', function () {
   // Regra 1: o ponto só entra depois de um dígito
   const ultimo = display.value[display.value.length - 1];
-  if (display.value.length === 0 || ultimo === '-' || ultimo === '+' || ultimo === '/' || ultimo === '*')
+  if (display.value.length === 0 || operadores.includes(ultimo))
     return;
   // (ainda vamos montar este if juntos)
 
@@ -58,7 +60,7 @@ botaoCalcular.addEventListener('click', function () {
   //só nessa parte sabemos se tem conteudo/conta , entao ja é seguro pegar o ultimo caractere
   const ultimo = display.value[display.value.length - 1];
   //conta incompleta ex.'5+...' : return encerra  para que o eval nao de erro
-  if (ultimo === '+' || ultimo === '-' || ultimo === '/' || ultimo === '*') {
+  if (operadores.includes(ultimo)) {
     return;
   }
   // eval le o texto calcula e mostra resultado no display 
