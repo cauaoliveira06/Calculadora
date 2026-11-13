@@ -1,6 +1,7 @@
 const botoesNum = document.querySelectorAll('.num');
 const display = document.querySelector('#display');
 const botoesOp = document.querySelectorAll('.op');
+const botaoApagar = document.querySelector('.apagar');
 const botaoLimpar = document.querySelector('.limpar');
 const botaoCalcular = document.querySelector('.calcular');
 const ponto = document.querySelector('.ponto');
@@ -29,7 +30,10 @@ botoesOp.forEach(function (botao) {
 
   });
 });
+botaoApagar.addEventListener('click', function () {
+  display.value = display.value.slice(0, -1);
 
+})
 botaoLimpar.addEventListener('click', function () {
   //troca o conteudo por texto vazio , lembrete : = troca += acrescenta!! 
   display.value = '';
