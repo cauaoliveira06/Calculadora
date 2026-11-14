@@ -2,6 +2,7 @@
 <html lang='pt-BR'>
 
 <head>
+  <link rel='stylesheet' href='style.css'>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>Calculadora JS</title>
@@ -9,8 +10,8 @@
 
 <body>
   <main class="calculadora">
-    <input type="text" id='display' readonly>
-    <div>
+    <div class="principal">
+      <input type="text" id='display' placeholder="0" readonly>
       <div>
         <button class="op" data-op="+">+</button>
         <button class="op" data-op="-">-</button>
@@ -35,12 +36,13 @@
         <button class="num">1</button>
         <button class="num">2</button>
         <button class="num">3</button>
+        <button class="ponto">.</button>
       </div>
-      <button class="ponto">.</button>
-      <button class="num">0</button>
-
-
-      <button class="calcular" data-op="=">=</button>
+      <div>
+        
+        <button class="num">0</button>
+        <button class="calcular">=</button>
+      </div>
 
     </div>
 

@@ -33,20 +33,22 @@ botoesOp.forEach(function (botao) {
 botaoApagar.addEventListener('click', function () {
   display.value = display.value.slice(0, -1);
 
-})
+});
 botaoLimpar.addEventListener('click', function () {
   //troca o conteudo por texto vazio , lembrete : = troca += acrescenta!! 
   display.value = '';
 });
 
 ponto.addEventListener('click', function () {
-  // Regra 1: o ponto só entra depois de um dígito
+  // regra1: o ponto só entra depois de um dígito
   const ultimo = display.value[display.value.length - 1];
-  if (display.value.length === 0 || operadores.includes(ultimo))
-    return;
-  // (ainda vamos montar este if juntos)
+  if (display.value.length === 0 || operadores.includes(ultimo)){
 
-  // Regra 2: o número atual não pode já ter ponto
+    return;
+  }
+  
+
+  // regra2: o número atual não pode já ter ponto
   const partes = display.value.split(/[+\-*/]/);
   const numeroAtual = partes[partes.length - 1];
 
