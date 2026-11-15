@@ -2,7 +2,7 @@
 
 Calculadora para uso no dia a dia, feita para praticar JavaScript e lógica de programação. Projeto de estudo do meu curso de desenvolvimento full-stack.
 
-🔗 **Demo:** (link do GitHub Pages, que colocamos depois)
+🔗 **Demo:** https://cauaoliveira06.github.io/Calculadora/
 
 ## Funcionalidades
 
